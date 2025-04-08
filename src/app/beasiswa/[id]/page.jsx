@@ -1,11 +1,12 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
   const [singleData, setSingleData] = useState(null);
   const { id } = useParams();
+  const router = useRouter();
 
   const getSingleData = async () => {
     try {
@@ -25,33 +26,50 @@ const Page = () => {
     }
   }, [id]);
 
-  if (!singleData) return <div>Loading...</div>;
+  if (!singleData) return <div className="text-center p-4">Loading...</div>;
 
   return (
-    <div className="w-full h-screen flex ">
-      <div className="w-full max-w-4xl mx-auto shadow-lg p-10 h-fit">
-        <div className="flex gap-2 ">
-          <div className="h-40 w-1/2 border border-black rounded-lg">
-            <h1>Image</h1>
+    <div className="w-full min-h-screen flex justify-center items-start p-4">
+      <div className="w-full max-w-4xl shadow-lg p-4 md:p-10 bg-white rounded-lg">
+        <div className="my-3">
+          <button
+            onClick={() => router.back()}
+            className="border border-blue-600 px-2 py-1 rounded-lg hover:bg-blue-600 hover:text-white transition-all"
+          >
+            Back
+          </button>
+        </div>
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* Image Placeholder */}
+          <div className="h-40 w-full md:w-1/2 border border-black rounded-lg flex items-center justify-center">
+            <h1 className="text-sm md:text-base">Image</h1>
           </div>
-          <div className="h-40 w-full">
-            <div className="flex justify-between text-xl items-center">
-              <h1 className="font-bold bg-blue-600 px-2 py-2 rounded-lg text-white">
+
+          {/* Informasi Beasiswa */}
+          <div className="w-full flex flex-col justify-between">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-lg md:text-xl gap-2">
+              <h1 className="font-bold bg-blue-600 px-3 py-1 rounded-lg text-white text-sm md:text-base">
                 {singleData.nama}
               </h1>
-              <h1>{singleData.penyedia}</h1>
+              <h1 className="text-sm md:text-base font-semibold underline">
+                {singleData.penyedia}
+              </h1>
             </div>
 
-            <div className="flex flex-col">
+            <div className="mt-4 space-y-1 text-sm md:text-base">
               <h1>
-                Dekskripsi : <span>{singleData.deskripsi}</span>
+                <span className="font-semibold">Deskripsi:</span>{" "}
+                {singleData.deskripsi}
               </h1>
               <h1>
-                Waktu : <span>{singleData.waktu}</span>
+                <span className="font-semibold">Waktu:</span> {singleData.waktu}
               </h1>
             </div>
           </div>
         </div>
+        <button className="w-full lg:w-fit mt-4 bg-yellow-400 font-semibold hover:bg-yellow-500 px-2 py-1 rounded-lg text-sm lg:text-lg transition-colors">
+          Bergabung
+        </button>
       </div>
     </div>
   );

@@ -48,8 +48,31 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden" onClick={toggleMobileMenu}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        <button
+          className="md:hidden relative w-10 h-10"
+          onClick={toggleMobileMenu}
+        >
+          {/* Menu Icon */}
+          <span
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 transform ${
+              mobileMenuOpen
+                ? "opacity-0 scale-75 rotate-90"
+                : "opacity-100 scale-100 rotate-0"
+            }`}
+          >
+            <Menu size={24} />
+          </span>
+
+          {/* X Icon */}
+          <span
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 transform ${
+              mobileMenuOpen
+                ? "opacity-100 scale-100 rotate-0"
+                : "opacity-0 scale-75 rotate-90"
+            }`}
+          >
+            <X size={24} />
+          </span>
         </button>
 
         {/* Desktop Navigation */}

@@ -34,7 +34,11 @@ const Page = () => {
             className="bg-white h-10 px-4 rounded-md shadow"
           />
 
-          <input type="date" className="bg-white h-10 px-4 rounded-md shadow" />
+          <input
+            type="date"
+            className="bg-white h-10 px-4 rounded-md shadow"
+            placeholder="masukan tanggal mulai"
+          />
         </div>
       </section>
 
