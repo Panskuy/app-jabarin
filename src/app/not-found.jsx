@@ -12,7 +12,7 @@ const NotFound = () => {
         onClick={() => router.back()}
         className="bg-yellow-500 px-4 text-2xl py-2 rounded-lg"
       >
-        Backasdasd
+        Back
       </button>
     </div>
   );
