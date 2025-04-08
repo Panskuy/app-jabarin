@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Search, Bell, Menu, X, Plus } from "lucide-react";
+import ThemeToggle from "@/theme/theme-toggle";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +35,9 @@ const Navbar = () => {
   return (
     <div
       className={`w-full flex justify-center fixed top-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-blue-900 shadow-lg" : "bg-blue-900"
+        scrolled
+          ? "bg-blue-900 shadow-lg dark:bg-black"
+          : "bg-blue-900 dark:bg-black"
       }`}
     >
       <div className="w-full max-w-7xl text-white px-4 md:px-10 py-4 flex justify-between items-center">
@@ -88,10 +91,10 @@ const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-4">
-            <button className="hover:bg-blue-700 p-2 rounded-full transition-colors">
+            <button className="hover:bg-blue-700 dark:hover:bg-yellow-600 p-2 rounded-full transition-colors">
               <Search size={20} />
             </button>
-            <button className="hover:bg-blue-700 p-2 rounded-full transition-colors relative">
+            <button className="hover:bg-blue-700 dark:hover:bg-yellow-600 p-2 rounded-full transition-colors relative">
               <Bell size={20} />
               <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
             </button>
@@ -106,12 +109,14 @@ const Navbar = () => {
             >
               <Plus className="w-9 h-8" />
             </Link>
+
+            <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-blue-900 md:hidden shadow-lg py-4 px-6 flex flex-col gap-4 transform transition-transform duration-300">
+          <div className="absolute top-full left-0 w-full bg-blue-900 dark:bg-black md:hidden shadow-lg py-4 px-6 flex flex-col gap-4 transform transition-transform duration-300">
             {NavItems.map((item, index) => (
               <Link
                 href={item.href}
@@ -131,6 +136,7 @@ const Navbar = () => {
                 <Bell size={20} />
                 <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
               </button>
+              <ThemeToggle />
               <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                 <span className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-5 rounded-lg font-medium shadow-md">
                   Login

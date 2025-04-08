@@ -9,24 +9,26 @@ export default function Card({ item }) {
   }`;
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5 shadow hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white dark:bg-black border border-gray-200 rounded-xl p-5 shadow hover:shadow-lg transition-shadow duration-300">
       <Link
         href={linkHref}
-        className="text-xl font-semibold text-yellow-700 hover:underline"
+        className="text-xl font-semibold text-yellow-700 dark:text-yellow-300 hover:underline"
       >
         {item.nama}
       </Link>
-      <p className="text-sm text-gray-500 mb-2 capitalize">{item.jenis}</p>
-      <p className="text-gray-700 mb-1">
+      <p className="text-sm text-gray-500 dark:text-white mb-2 capitalize">
+        {item.jenis}
+      </p>
+      <p className="text-gray-700 mb-1 dark:text-white">
         <span className="font-medium">Penyedia:</span> {item.penyedia}
       </p>
-      <p className="text-gray-700 mb-1">
+      <p className="text-gray-700 mb-1 dark:text-white">
         <span className="font-medium">Lokasi:</span> {item.lokasi}
       </p>
-      <p className="text-gray-700 mb-3">
-        <span className="font-medium">Waktu:</span> {item.waktu}
+      <p className="text-gray-700 mb-3 dark:text-white">
+        <span className="font-medium dark:text-white">Waktu:</span> {item.waktu}
       </p>
-      <p className="text-gray-600 text-sm">{item.deskripsi}</p>
+      <p className="text-gray-600 text-sm dark:text-white">{item.deskripsi}</p>
     </div>
   );
 }

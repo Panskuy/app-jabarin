@@ -30,11 +30,11 @@ const Page = () => {
 
   return (
     <div className="w-full min-h-screen flex justify-center items-start p-4">
-      <div className="w-full max-w-4xl shadow-lg p-4 md:p-10 bg-white rounded-lg">
+      <div className="w-full max-w-4xl shadow-lg p-4 md:p-10 bg-white dark:bg-white/5 rounded-lg">
         <div className="my-3">
           <button
             onClick={() => router.back()}
-            className="border border-blue-600 px-2 py-1 rounded-lg hover:bg-blue-600 hover:text-white transition-all"
+            className="border border-blue-600 dark:border-yellow-600 px-2 py-1 rounded-lg hover:bg-blue-600 dark:hover:bg-yellow-600 hover:text-white transition-all"
           >
             Back
           </button>
@@ -48,7 +48,7 @@ const Page = () => {
           {/* Informasi Beasiswa */}
           <div className="w-full flex flex-col justify-between">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-lg md:text-xl gap-2">
-              <h1 className="font-bold bg-blue-600 px-3 py-1 rounded-lg text-white text-sm md:text-base">
+              <h1 className="font-bold bg-blue-600 dark:bg-yellow-600 px-3 py-1 rounded-lg text-white text-sm md:text-base">
                 {singleData.nama}
               </h1>
               <h1 className="text-sm md:text-base font-semibold underline">
@@ -67,7 +67,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <button className="w-full lg:w-fit mt-4 bg-yellow-400 font-semibold hover:bg-yellow-500 px-2 py-1 rounded-lg text-sm lg:text-lg transition-colors">
+        <button className="w-full lg:w-fit mt-4 bg-yellow-400 dark:bg-yellow-600 font-semibold flex items-center hover:bg-yellow-500 px-2 py-1 rounded-lg text-sm lg:text-lg transition-colors">
           Bergabung
         </button>
       </div>

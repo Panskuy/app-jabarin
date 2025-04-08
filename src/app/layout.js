@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import ThemeProvider from "../theme/theme-provider";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -19,12 +20,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased tracking-tight`}
       >
-        <Navbar />
-        <div className="mt-20">{children}</div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <div className="mt-18 dark:bg-black">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
