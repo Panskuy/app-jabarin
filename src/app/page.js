@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [beasiswaData, setBeasiswaData] = useState([]);
   const [seminarData, setSeminarData] = useState([]);
+  const [WorkshopData, setWorkshopData] = useState([]);
 
   const getData = async () => {
     try {
@@ -25,6 +26,11 @@ export default function Home() {
           .filter((item) => item.jenis?.toLowerCase().includes("seminar"))
           .slice(0, 3)
       );
+      setWorkshopData(
+        result
+          .filter((item) => item.jenis?.toLowerCase().includes("workshop"))
+          .slice()
+      );
     } catch (error) {
       console.error("Gagal fetch data", error);
     }
@@ -40,8 +46,21 @@ export default function Home() {
         <Header />
       </section>
 
-      <Section title="Beasiswa" data={beasiswaData} showLink href="/beasiswa" />
-      <Section title="Seminar" data={seminarData} showLink href="/seminar" />
+      <div className="grid grid-cols-1 gap-2  lg:grid-cols-2">
+        <Section
+          title="Beasiswa"
+          data={beasiswaData}
+          showLink
+          href="/beasiswa"
+        />
+        <Section title="Seminar" data={seminarData} showLink href="/seminar" />
+        <Section
+          title="Workshop"
+          data={WorkshopData}
+          showLink
+          href="/workshop"
+        />
+      </div>
     </div>
   );
 }

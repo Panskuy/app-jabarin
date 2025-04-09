@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
-  const [dataBeasiswa, setDataBeasiswa] = useState([]);
+  const [dataSeminar, setDataSeminar] = useState([]);
 
   const getDataBeasiswa = async () => {
     try {
@@ -14,9 +14,9 @@ const Page = () => {
       );
       const data = await response.json();
       const filtered = data.filter(
-        (item) => item.jenis.toLowerCase() === "beasiswa"
+        (item) => item.jenis.toLowerCase() === "seminar"
       );
-      setDataBeasiswa(filtered);
+      setDataSeminar(filtered);
     } catch (error) {
       console.log("Data gagal di-fetch");
     }
@@ -47,7 +47,7 @@ const Page = () => {
 
       {/* Event list */}
       <section className="space-y-6">
-        {dataBeasiswa.map((event) => (
+        {dataSeminar.map((event) => (
           <div
             key={event.id}
             className="bg-white dark:bg-white/20 shadow-md rounded-xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:shadow-lg transition-all"
@@ -80,7 +80,7 @@ const Page = () => {
             </div>
 
             <Link
-              href={`/event/${event.id}`}
+              href={`/beasiswa/${event.id}`}
               className="text-yellow-600 hover:text-yellow-800 transition"
             >
               <MoveRight size={28} />

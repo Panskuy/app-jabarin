@@ -12,7 +12,7 @@ const Navbar = () => {
   const NavItems = [
     { name: "Home", href: "/" },
     { name: "Beasiswa", href: "/beasiswa" },
-    { name: "Seminar", href: "/Seminar" },
+    { name: "Seminar", href: "/seminar" },
   ];
 
   useEffect(() => {
@@ -45,9 +45,9 @@ const Navbar = () => {
           <div className="mr-2 h-10 w-10 bg-amber-500 rounded-full flex items-center justify-center">
             <span className="font-bold text-2xl">J</span>
           </div>
-          <h1 className="font-bold text-2xl md:text-3xl">
+          <Link href={"/"} className="font-bold text-2xl md:text-3xl">
             JABARIN<span className="text-amber-500">.COM</span>
-          </h1>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
