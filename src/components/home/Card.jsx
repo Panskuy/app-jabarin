@@ -12,7 +12,7 @@ export default function Card({ item }) {
         <p className="text-xl font-semibold text-yellow-700 dark:text-yellow-300 group-hover:underline">
           {item.nama}
         </p>
-        <p className="text-sm text-gray-500 dark:text-white mb-2  uppercase">
+        <p className="text-gray-500 dark:text-white mb-2 font-semibold uppercase">
           {item.jenis}
         </p>
         <p className="text-gray-700 mb-1 dark:text-white">
@@ -25,7 +25,7 @@ export default function Card({ item }) {
           <span className="font-medium dark:text-white">Waktu:</span>{" "}
           {item.waktu}
         </p>
-        <p className="text-gray-600 text-sm dark:text-white text-justify">
+        <p className="text-gray-600 font-semibold dark:text-white text-justify">
           {item.deskripsi}
         </p>
       </div>

@@ -1,11 +1,14 @@
 "use client";
 
+import Search from "@/components/shared/Search";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
-  const [dataSeminar, setDataSeminar] = useState([]);
+  const [dataBeasiswa, setDataBeasiswa] = useState([]);
+  const [searchDate, setSearchDate] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const getDataBeasiswa = async () => {
     try {
@@ -16,7 +19,8 @@ const Page = () => {
       const filtered = data.filter(
         (item) => item.jenis.toLowerCase() === "seminar"
       );
-      setDataSeminar(filtered);
+
+      setDataBeasiswa(filtered);
     } catch (error) {
       console.log("Data gagal di-fetch");
     }
@@ -26,28 +30,22 @@ const Page = () => {
     getDataBeasiswa();
   }, []);
 
-  return (
-    <div className="w-full max-w-[1800px] mx-auto min-h-screen  dark:bg-white/5 py-10">
-      {/* Filter section */}
-      <section className="w-full bg-yellow-500 rounded-lg px-6 py-4 mb-6">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <input
-            type="text"
-            placeholder="Cari berdasarkan kata kunci..."
-            className="bg-white dark:bg-black h-10 px-4 rounded-md shadow"
-          />
+  const filteredData = dataBeasiswa.filter(
+    (item) =>
+      item.nama.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (searchDate ? item.waktu === searchDate : true)
+  );
 
-          <input
-            type="date"
-            className="bg-white dark:bg-black h-10 px-4 rounded-md shadow"
-            placeholder="masukan tanggal mulai"
-          />
-        </div>
-      </section>
+  return (
+    <div className="w-full max-w-[1800px] mx-auto min-h-screen dark:bg-white/5 py-10">
+      <Search
+        onKeywordChange={(e) => setSearchTerm(e.target.value)}
+        onDateChange={(e) => setSearchDate(e.target.value)}
+      />
 
       {/* Event list */}
       <section className="space-y-6">
-        {dataSeminar.map((event) => (
+        {filteredData.map((event) => (
           <div
             key={event.id}
             className="bg-white dark:bg-white/20 shadow-md rounded-xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:shadow-lg transition-all"
@@ -80,7 +78,7 @@ const Page = () => {
             </div>
 
             <Link
-              href={`/beasiswa/${event.id}`}
+              href={`/event/${event.id}`}
               className="text-yellow-600 hover:text-yellow-800 transition"
             >
               <MoveRight size={28} />

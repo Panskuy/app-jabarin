@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Beasiswa", href: "/beasiswa" },
     { name: "Seminar", href: "/seminar" },
+    { name: "Magang", href: "/magang" },
   ];
 
   useEffect(() => {
@@ -91,14 +92,12 @@ const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-4">
-            <button className="hover:bg-blue-700 dark:hover:bg-yellow-600 p-2 rounded-full transition-colors">
-              <Search size={20} />
-            </button>
+            <button className="hover:bg-blue-700 dark:hover:bg-yellow-600 p-2 rounded-full transition-colors"></button>
             <button className="hover:bg-blue-700 dark:hover:bg-yellow-600 p-2 rounded-full transition-colors relative">
               <Bell size={20} />
               <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
             </button>
-            <Link href="/login">
+            <Link href="/auth/login">
               <span className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-5 rounded-lg font-medium shadow-md transition-all duration-200 hover:shadow-lg">
                 Login
               </span>
@@ -129,15 +128,13 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex justify-between mt-2 pt-3 border-t border-blue-700">
-              <button className="p-2 hover:bg-blue-800 rounded-full">
-                <Search size={20} />
-              </button>
+              <button className="p-2 hover:bg-blue-800 rounded-full"></button>
               <button className="p-2 hover:bg-blue-800 rounded-full relative">
                 <Bell size={20} />
                 <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
               </button>
               <ThemeToggle />
-              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/auth/login" onClick={() => setMobileMenuOpen(false)}>
                 <span className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-5 rounded-lg font-medium shadow-md">
                   Login
                 </span>

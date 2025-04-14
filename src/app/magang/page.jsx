@@ -17,7 +17,7 @@ const Page = () => {
       );
       const data = await response.json();
       const filtered = data.filter(
-        (item) => item.jenis.toLowerCase() === "beasiswa"
+        (item) => item.jenis.toLowerCase() === "magang"
       );
 
       setDataBeasiswa(filtered);
@@ -37,7 +37,7 @@ const Page = () => {
   );
 
   return (
-    <div className="w-full max-w-[1800px] mx-auto min-h-screen dark:bg-white/5 py-10">
+    <div className="w-full max-w-[1800px] mx-auto dark:bg-white/5 py-10">
       <Search
         onKeywordChange={(e) => setSearchTerm(e.target.value)}
         onDateChange={(e) => setSearchDate(e.target.value)}
