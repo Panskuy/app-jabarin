@@ -3,7 +3,7 @@ import React from "react";
 
 const Search = ({ onKeywordChange }) => {
   return (
-    <section className="w-full bg-yellow-500 rounded-lg px-6 py-4 mb-6 flex flex-col lg:flex-row items-center">
+    <section className="w-full bg-yellow-500 rounded-lg px-6 py-4 mb-6 flex flex-col lg:flex-row items-center gap-2">
       <h1 className="w-full text-center mb-2 lg:mb-0 lg:text-start font-bold dark:text-black text-3xl ">
         Search
       </h1>
@@ -16,6 +16,14 @@ const Search = ({ onKeywordChange }) => {
         />
 
         <SearchIcon className="-ml-10" />
+      </div>
+      <div className="w-full flex items-center">
+        <input
+          type="date"
+          placeholder="Cari berdasarkan kata kunci..."
+          className="bg-white dark:bg-black h-10 px-4 rounded-md shadow w-full"
+          onChange={onKeywordChange}
+        />
       </div>
     </section>
   );
