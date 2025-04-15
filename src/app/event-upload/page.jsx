@@ -26,9 +26,9 @@ const EventUpload = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-2xl bg-[#1a1a1a] text-white rounded-xl shadow-lg p-10">
+      <div className="w-full max-w-2xl bg-white dark:bg-[#1a1a1a] dark:text-white rounded-xl shadow-lg p-10">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-[#f5a300] mt-2">
+          <h1 className="text-3xl font-bold text-blue-500 dark:text-yellow-500 mt-2">
             Upload Event
           </h1>
           <p className="text-sm text-gray-400">
@@ -45,7 +45,7 @@ const EventUpload = () => {
               name="nama"
               value={form.nama}
               onChange={handleChange}
-              className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+              className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
               required
             />
           </div>
@@ -58,7 +58,7 @@ const EventUpload = () => {
               value={form.deskripsi}
               onChange={handleChange}
               rows={3}
-              className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+              className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
               required
             ></textarea>
           </div>
@@ -72,7 +72,7 @@ const EventUpload = () => {
                 name="lokasi"
                 value={form.lokasi}
                 onChange={handleChange}
-                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
               />
             </div>
             <div>
@@ -82,7 +82,7 @@ const EventUpload = () => {
                 name="penyedia"
                 value={form.penyedia}
                 onChange={handleChange}
-                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
               />
             </div>
           </div>
@@ -95,9 +95,11 @@ const EventUpload = () => {
                 name="jenis"
                 value={form.jenis}
                 onChange={handleChange}
-                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+                className="w-full bg-transparent border border-gray-600 text-black dark:text-white dark:bg-black/50 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
               >
-                <option value="">Pilih jenis</option>
+                <option value="" disabled>
+                  Pilih jenis
+                </option>
                 <option value="beasiswa">Beasiswa</option>
                 <option value="magang">Magang</option>
                 <option value="seminar">Seminar</option>
@@ -110,7 +112,7 @@ const EventUpload = () => {
                 name="waktu"
                 value={form.waktu}
                 onChange={handleChange}
-                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+                className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
               />
             </div>
           </div>
@@ -123,7 +125,7 @@ const EventUpload = () => {
               name="img"
               value={form.img}
               onChange={handleChange}
-              className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f5a300]"
+              className="w-full bg-transparent border border-gray-600 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-yellow-600"
             />
           </div>
 
@@ -131,7 +133,7 @@ const EventUpload = () => {
           <div className="text-center pt-2">
             <button
               type="submit"
-              className="bg-yellow-600 text-black font-bold py-2 px-6 rounded-md hover:bg-yellow-500 transition dark:text-white"
+              className="bg-blue-600 hover:bg-blue-700 dark:bg-yellow-600 text-white font-bold py-2 px-6 rounded-md dark:hover:bg-yellow-500 transition "
             >
               Submit Event
             </button>

@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="w-full max-w-[1800px] mx-auto min-h-screen px-4 py-6">
-      <section className="w-full bg-yellow-600 dark:bg-white/30 rounded-lg px-4 py-4 mb-6 shadow-md">
+      <section className="w-full bg-yellow-600 dark:bg-white/30 rounded-xl mb-6 shadow-md">
         <Header />
       </section>
 
