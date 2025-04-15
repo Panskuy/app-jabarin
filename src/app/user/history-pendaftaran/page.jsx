@@ -21,7 +21,9 @@ const page = () => {
 
   return (
     <div className="flex flex-col p-2 bg-white dark:bg-white/10 ml-1 rounded-xl  shadow-xl">
-      <h1 className="text-center font-bold text-3xl mb-3">Event Tersimpan</h1>
+      <h1 className="text-center font-bold text-3xl mb-3">
+        Riwayat Pendaftaran
+      </h1>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
         {historyEvent.map((riwayat) => {
           return (
@@ -36,13 +38,7 @@ const page = () => {
                 </h1>
               </div>
               <h1>{riwayat.lokasi}</h1>
-
-              <Link
-                href={`/event/${riwayat.id}`}
-                className="text-yellow-600 hover:text-yellow-800 transition flex justify-start"
-              >
-                <MoveRight size={28} />
-              </Link>
+              <h1>{riwayat.waktu}</h1>
             </div>
           );
         })}

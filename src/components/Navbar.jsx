@@ -103,7 +103,7 @@ const Navbar = () => {
               <Plus className="w-9 h-8" />
             </Link>
             <ThemeToggle />
-            <Link href="/user">
+            <Link href="/user/edit-profile">
               <span className="bg-yellow-500 text-white py-2 px-3 rounded-full">
                 U
               </span>
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full" />
               </button>
               <ThemeToggle />
-              <Link href="/user" className="mt-2">
+              <Link href="/user/edit-profile" className="mt-2">
                 <span className="bg-yellow-500 text-white py-2 px-3 rounded-full">
                   U
                 </span>

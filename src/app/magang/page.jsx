@@ -2,6 +2,7 @@
 
 import Search from "@/components/shared/Search";
 import { MoveRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -37,7 +38,7 @@ const Page = () => {
   );
 
   return (
-    <div className="w-full max-w-[1800px] mx-auto dark:bg-white/5 py-10">
+    <div className="w-full max-w-[1800px] mx-auto min-h-screen dark:bg-white/5 py-10">
       <Search
         onKeywordChange={(e) => setSearchTerm(e.target.value)}
         onDateChange={(e) => setSearchDate(e.target.value)}
@@ -50,6 +51,18 @@ const Page = () => {
             key={event.id}
             className="bg-white dark:bg-white/20 shadow-md rounded-xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:shadow-lg transition-all"
           >
+            {event.img && (
+              <div className="min-w-[120px] max-w-[200px]">
+                <Image
+                  src={event.img}
+                  alt={event.nama}
+                  width={200}
+                  height={120}
+                  className="rounded object-cover"
+                />
+              </div>
+            )}
+
             <div className="flex-1">
               <Link
                 href={`/event/${event.id}`}

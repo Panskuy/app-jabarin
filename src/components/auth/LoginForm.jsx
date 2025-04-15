@@ -25,7 +25,7 @@ const LoginForm = () => {
             name="username"
             id="username"
             placeholder="Masukkan username"
-            className="px-2 py-1 border border-black/20 rounded-lg"
+            className="px-2 py-1 border border-black/20 dark:border-white/30 rounded-lg"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -36,7 +36,7 @@ const LoginForm = () => {
               name="password"
               id="password"
               placeholder="Masukkan Password"
-              className="px-2 py-1 border border-black/20 rounded-lg w-full "
+              className="px-2 py-1 border border-black/20 dark:border-white/30 rounded-lg w-full "
             />
 
             <button

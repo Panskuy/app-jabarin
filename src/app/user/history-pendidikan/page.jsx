@@ -15,6 +15,12 @@ const page = () => {
       Lokasi: "Surabaya",
       tahun: "1998",
     },
+    {
+      label: "SMA",
+      namaSekolah: "SMAN 20 Surabaya",
+      Lokasi: "Surabaya",
+      tahun: "2001",
+    },
   ];
 
   return (

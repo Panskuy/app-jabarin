@@ -14,7 +14,7 @@ const page = () => {
               type="text"
               placeholder="masukan username "
               id="edit-username"
-              className="rounded-lg p-2"
+              className="rounded-lg p-2 border-2 border-black/30"
             />
           </div>
           <div className="flex flex-col gap-1">
@@ -25,24 +25,20 @@ const page = () => {
               type="email"
               placeholder="masukan Email"
               id="edit-email"
-              className="rounded-lg p-2"
+              className="rounded-lg p-2 border-2 border-black/30"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="edit-password" className="font-semibold">
+            <label htmlFor="edit-password" className="font-semibold ">
               Password
             </label>
             <input
               type="password"
               placeholder="masukan password"
               id="edit-password"
-              className="rounded-lg p-2"
+              className="rounded-lg p-2 border-2 border-black/30"
             />
           </div>
-        </div>
-        <div className="w-1/2  flex flex-col">
-          <label htmlFor="edit-username">Password</label>
-          <input type="text" placeholder="masukan username " />
         </div>
       </div>
 
