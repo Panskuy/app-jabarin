@@ -18,7 +18,7 @@ const NavUser = () => {
     },
     {
       label: "Event Tersimpan",
-      href: "/user/event-tersimpan",
+      href: "/user/event-history",
     },
     {
       label: "History Pendaftaran",
