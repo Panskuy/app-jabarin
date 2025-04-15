@@ -24,16 +24,16 @@ const page = () => {
       <h1 className="text-center font-bold text-3xl mb-3">
         Riwayat Pendidikan
       </h1>
-      <div className="w-full grid grid-cols-2 gap-2">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
         {historyEvent.map((riwayat) => {
           return (
             <div
               key={riwayat.id}
-              className="w-full bg-white dark:bg-white/10 rounded-lg px-4 py-2"
+              className="w-full bg-white dark:bg-white/10 rounded-lg px-4 py-2 shadow-lg"
             >
-              <div className="flex gap-2 items-center">
-                <h1 className="text-xl font-bold">{riwayat.nama}</h1>
-                <h1 className="text-xs font-semibold bg-yellow-600 px-2 py-1 rounded-lg">
+              <div className="flex gap-2 items-center justify-between">
+                <h1 className="text-lg lg:text-xl font-bold">{riwayat.nama}</h1>
+                <h1 className="text-xs font-semibold bg-yellow-600 px-2 py-1 rounded-lg text-white dark:text-white">
                   {riwayat.penyedia}
                 </h1>
               </div>
@@ -41,7 +41,7 @@ const page = () => {
 
               <Link
                 href={`/event/${riwayat.id}`}
-                className="text-yellow-600 hover:text-yellow-800 transition flex justify-end"
+                className="text-yellow-600 hover:text-yellow-800 transition flex justify-start"
               >
                 <MoveRight size={28} />
               </Link>
